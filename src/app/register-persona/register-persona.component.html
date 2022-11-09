@@ -1,0 +1,74 @@
+<div class="body">
+    <form action="" #myForm="ngForm">
+
+        <div class="form">
+            <h3>Registro de personas</h3>
+            <div class="card">
+
+                <input type="text" class="form-control" id="nombre" [(ngModel)]="persona.nombre" name="nombre" required>
+                <span class="barra"></span>
+                <label for="">Nombre </label>
+            </div>
+            <div class="card">
+                <input type="text" class="form-control" id="apellido" [(ngModel)]="persona.apellido" name="apellido"
+                    required>
+                <span class="barra"></span>
+                <label for="">Apellido</label>
+            </div>
+
+            <div class="card">
+
+                <input type="text" class="form-control" id="correo" [(ngModel)]="persona.correo" name="correo" required>
+                <span class="barra"></span>
+                <label for="">Correo </label>
+            </div>
+            <div class="card">
+                <label for="fechaNacimiento"> Fecha de nacimiento</label>
+                <input type="date" class="form-control" placeholder="Fecha de nacimiento" id="fechaNacimiento"
+                    [(ngModel)]="persona.fechaNacimiento" name="fechaNacimiento" required>
+
+                <span class="barra"></span>
+                <!-- <label for="">Fecha de Nacimiento</label> -->
+            </div>
+
+            <div class="card">
+
+                <input type="text" class="form-control" id="telefono" [(ngModel)]="persona.telefono" name="telefono"
+                    required>
+
+                <span class="barra"></span>
+                <label for="">Teléfono </label>
+            </div>
+
+            <div class="card">
+                <select class="form-select" class="form-control" [(ngModel)]="region.id" id="region" name="region"
+                    (change)="onSelect($any($event.target).value)">
+                    <option class="dropdown-item" disabled selected value="undefined">Seleccione una Región</option>
+
+                    <option *ngFor="let regi of regiones" [value]="regi.id"> {{regi.region}}</option>
+                </select>
+
+                <!-- <span class="barra"></span>
+                            <label for="">Región</label> -->
+            </div>
+
+            <div class="card">
+
+                <select class="form-select" class="form-control" [(ngModel)]="comuna.id" id="comuna" name="comuna">
+                    <option class="dropdown-item" disabled selected value="undefined">Seleccione una Comuna</option>
+                    <option *ngFor="let comu of comunas" [value]="comu.id">{{comu.comuna}}</option>
+                </select>
+
+                <!-- <span class="barra"></span>
+                            <label for="">Comuna </label> -->
+            </div>
+
+
+        </div>
+
+
+        <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary" (click)="save()">Guardar</button>
+
+    </form>
+
+</div>

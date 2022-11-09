@@ -1,0 +1,95 @@
+*,
+
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    
+     height: 583px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+}
+form{
+    background: white;
+    padding: 10px 0;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    width: 300px;
+}
+.form{
+    width: 100%;
+    margin: auto;   
+}
+
+.card{
+    position: relative;
+    margin: 20px;
+}
+input{
+    background: none;
+    color: black;
+    font-size: 18px;
+    padding: 5px 5px 5px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #49454567;
+}
+input:focus{
+    outline: none;
+    color: #535d5d;
+}
+label{
+    color: #49454567;
+    font-size: 16px;
+    position: absolute ;
+    bottom: 0;
+    left: 5px;
+    top: 10px;
+    transition: 0.5s  ease all;
+    pointer-events: none;
+}
+input:focus~label,
+input:valid~label{
+    top: -14px;
+    font-size: 12px;
+    color: #2196f3;
+}
+.barra{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.barra::before{
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to right, #B06AB3, #4568DC );
+    transition: 0.3s ease width;
+    left: 0;
+}
+input:focus~.barra::before{
+    width: 100%;
+}
+button{
+    background-color:#4568DC ; 
+    border-radius: 10px;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: white;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}

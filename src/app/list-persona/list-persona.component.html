@@ -1,0 +1,33 @@
+<h3 class="text-center">Lista personas</h3>
+<table class="table table-striped ">
+    <thead class="text-white bg-primary">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Fecha de nacimiento</th>
+            <th>Telefono</th>
+            <th>Región</th>
+            <th>Comuna</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>       
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of personas">
+     
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.correo}}</td>
+            <td>{{persona.fechaNacimiento}}</td>
+            <td>{{persona.telefono}}</td>
+           <td>{{persona.region.region}}</td>  
+            <td>{{persona.comuna.comuna}}</td>
+            
+            <td><button class="btn btn-primary" (click)="updatePersona(persona.id)">Editar</button></td>
+
+            <td> <button class="btn btn-danger" style="margin-left:10px" (click)="deletePersona(persona.id)">Eliminar</button></td> 
+            
+        </tr>  
+    </tbody>
+</table>
